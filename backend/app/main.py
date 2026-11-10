@@ -7,6 +7,7 @@ from app.api.routes.health import router as health_router
 
 from app.api.routes.auth import router as auth_router
 
+from app.api.routes.partners import router as partners_router
 
 app = FastAPI(
     title=settings.app_name,
@@ -26,6 +27,7 @@ app.include_router(health_router)
 
 app.include_router(auth_router)
 
+app.include_router(partners_router)
 
 @app.get("/health", tags=["Health"])
 def health_check():
